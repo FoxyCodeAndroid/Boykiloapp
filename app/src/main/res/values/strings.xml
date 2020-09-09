@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BoyKıloApp</string>
+    <string name="boy">Boy</string>
+    <string name="kilo">Kilo</string>
+    <string name="ince">İnce-> Gereğin fazla zayıfsın biraz daha düzenli ve kaliteli beslenmeye ihtiyacın var:)</string>
+    <string name="fit"> Fit -> Harika vücut ölçülerine sahipsin, nasıl besleniyorsan böyle devam etmelisin:)</string>
+    <string name="r_kilo">Kilo fazlası -> Bazenleri yemeği fazla kacirabiliyorsun. Beslenmene biraz daha dikkat edersen, cabucak fit bir vücuda sahip olabilirsin :)</string>
+    <string name="asiri_kilo">Aşırı kilolu -> Vücudundaki yağ oranı çok fazla. Bu sorunu çözebilmen icin günlük beslenme şeklini değiştirmeli ve sporları ihmal etmemelisin :)</string>
+    <array name="cinsiyet">
+        <item>Erkek</item>
+        <item>Kadın</item>
+        <item>Diğer</item>
+    </array>
+    <array name="ten">
+        <item>Beyaz Tenli</item>
+        <item>Esmer Tenli</item>
+        <item>Zenci Tenli</item>
+        <item>Sarışın Tenli</item>
+    </array>
+</resources>
