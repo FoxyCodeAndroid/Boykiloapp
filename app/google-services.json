@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1026283172879",
+    "firebase_url": "https://bedenolcer.firebaseio.com",
+    "project_id": "bedenolcer",
+    "storage_bucket": "bedenolcer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026283172879:android:1bad7ca3560cb526535f7a",
+        "android_client_info": {
+          "package_name": "com.foxycode.bedenolcer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026283172879-ovjvglrk6i1mvam084ro7k5krrueslgi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdXnppQqpoQBrEqnOAtzrZL2pxBhn3KDA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1026283172879-ovjvglrk6i1mvam084ro7k5krrueslgi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

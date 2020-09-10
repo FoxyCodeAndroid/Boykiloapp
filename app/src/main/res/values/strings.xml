@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BoyKıloApp</string>
+    <string name="app_name">Beden Ölçer</string>
     <string name="boy">Boy</string>
     <string name="kilo">Kilo</string>
     <string name="ince">İnce-> Gereğin fazla zayıfsın biraz daha düzenli ve kaliteli beslenmeye ihtiyacın var:)</string>
@@ -17,4 +17,5 @@
         <item>Zenci Tenli</item>
         <item>Sarışın Tenli</item>
     </array>
+    <string name="banner_ad_unit_id">ca-app-pub-2074230064138175~2330983470</string>
 </resources>

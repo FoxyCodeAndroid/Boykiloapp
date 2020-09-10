@@ -2,14 +2,15 @@ package com.example.boykloapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
 import android.text.TextUtils
-import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import com.example.boykloapp.R
+import com.foxycode.bedenolcer.R
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.firebase.analytics.FirebaseAnalytics
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -17,16 +18,22 @@ class MainActivity : AppCompatActivity() {
     var skinColorList = listOf<String>()
     var result1: Float = 0.0f
     var result2: Float = 0.0f
-    var imgPath: String? = null
     var genderSelectedItem1: Int? = null
     var genderSelectedItem2: Int? = null
     var bodyTypeSelectedItem1: Int? = null
     var bodyTypeSelectedItem2: Int? = null
     var endexLvl: Int? = null
+    var bundle = Bundle()
+    lateinit var adView : AdView
+
+    private var mFirebaseAnalytics: FirebaseAnalytics? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
+        adView = findViewById(R.id.adView)
+        val adRequest: AdRequest = AdRequest.Builder().build()
+        adView?.loadAd(adRequest)
         setView()
     }
 
@@ -46,6 +53,8 @@ class MainActivity : AppCompatActivity() {
                 id: Long
             ) {
                 genderSelectedItem1 = position
+                bundle.putString("Cinsiyet 1", listview_cinsiyet.selectedItem.toString());
+
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -66,6 +75,7 @@ class MainActivity : AppCompatActivity() {
                 id: Long
             ) {
                 bodyTypeSelectedItem1 = position
+                bundle.putString("Ten Reng, 1", listview_ten_rengi.selectedItem.toString());
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -85,6 +95,7 @@ class MainActivity : AppCompatActivity() {
                 id: Long
             ) {
                 genderSelectedItem2 = position
+                bundle.putString("Cinsiyet 2", listview_cinsiyet2.selectedItem.toString());
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -105,6 +116,7 @@ class MainActivity : AppCompatActivity() {
                 id: Long
             ) {
                 bodyTypeSelectedItem2 = position
+                bundle.putString("Ten Rengi 2", listview_ten_rengi2.selectedItem.toString());
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -115,6 +127,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun calBodyMass(cm: Int, weight: Float): Float {
+        bundle.putInt("Boy", cm);
+        bundle.putFloat("Agırlık", weight);
         return weight / ((cm * cm)/10000)
     }
 
@@ -150,6 +164,7 @@ class MainActivity : AppCompatActivity() {
                     resCal(result2)
                     txtView_result2.text = resCal(result2)
                     setImg2()
+                    mFirebaseAnalytics?.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
                 } else
                     showToast()
 
