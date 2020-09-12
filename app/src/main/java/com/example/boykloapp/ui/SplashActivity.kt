@@ -13,8 +13,7 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        MobileAds.initialize(this) {}
-
+        MobileAds.initialize(this)
         Handler().postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
             finish()
