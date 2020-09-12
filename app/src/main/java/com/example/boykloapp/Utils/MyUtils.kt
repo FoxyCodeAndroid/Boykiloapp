@@ -18,16 +18,16 @@ object MyUtils {
     }
 
     fun resCal(endex: Float,context: Context): String {
-        if (endex > 0 && endex <= 18.4) {
+        if (endex > 0 && endex <= 18.5) {
             endexLvl = 0
             return context.resources.getString(R.string.ince)
-        } else if (endex > 18.4 && endex <= 24.9) {
+        } else if (endex > 18.5 && endex <= 24.9) {
             endexLvl = 1
             return context.resources.getString(R.string.fit)
-        } else if (endex > 25 && endex <= 39.9) {
+        } else if (endex > 24.9 && endex <= 29.9) {
             endexLvl = 2
             return context.resources.getString(R.string.r_kilo)
-        } else if (endex > 40) {
+        } else if (endex > 29.9) {
             endexLvl = 3
             return context.resources.getString(R.string.asiri_kilo)
         }

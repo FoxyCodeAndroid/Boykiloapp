@@ -68,7 +68,6 @@ class MainActivity : AppCompatActivity() {
 
         val skinColorAdapter =
             ArrayAdapter(this, android.R.layout.simple_spinner_item, skinColorList)
-        listview_ten_rengi.prompt = "Ten Rengi"
         listview_ten_rengi?.setAdapter(skinColorAdapter)
 
         listview_ten_rengi.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -88,7 +87,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         val genderAdapter2 = ArrayAdapter(this, android.R.layout.simple_spinner_item, genderList)
-        listview_cinsiyet2.prompt = "Cinsiyet"
         listview_cinsiyet2?.setAdapter(genderAdapter2)
 
         listview_cinsiyet2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -130,8 +128,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun calBodyMass(cm: Int, weight: Float): Float {
-        bundle.putInt("Boy", cm);
+    fun calBodyMass(cm:Float, weight: Float): Float {
+        bundle.putFloat("Boy", cm);
         bundle.putFloat("Agırlık", weight);
         return weight / ((cm * cm)/10000)
     }
@@ -145,13 +143,12 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
     fun onClick(view: View) {
         when (view.id) {
             R.id.btnCal -> {
                 if (checkEmpty(etxt_boy.text.toString(), etxt_kilo.text.toString())) {
                     result1 = calBodyMass(
-                        etxt_boy.text.toString().toInt(),
+                        etxt_boy.text.toString().toFloat(),
                         etxt_kilo.text.toString().toFloat()
                     )
                     txtView_result1.text = MyUtils.resCal(result1,this)
@@ -160,7 +157,7 @@ class MainActivity : AppCompatActivity() {
                     MyUtils.showErrorToast(this)
                 if (checkEmpty(etxt_boy2.text.toString(), etxt_kilo2.text.toString())) {
                     result2 = calBodyMass(
-                        etxt_boy2.text.toString().toInt(),
+                        etxt_boy2.text.toString().toFloat(),
                         etxt_kilo2.text.toString().toFloat()
                     )
                     txtView_result2.text = MyUtils.resCal(result2,this)
