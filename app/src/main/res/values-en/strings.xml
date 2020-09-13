@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Beden Ölçer</string>
+    <string name="app_name">Body Size</string>
     <string name="admob_app_id">ca-app-pub-2074230064138175~2330983470</string>
     <string name="admob_banner_id">ca-app-pub-2074230064138175/2306932749</string>
     <string name="boy">Size</string>
     <string name="kilo">Weigth</string>
-    <string name="ince">İnce-> Gereğin fazla zayıfsın biraz daha düzenli ve kaliteli beslenmeye ihtiyacın var:)</string>
-    <string name="fit"> Fit -> Harika vücut ölçülerine sahipsin, nasıl besleniyorsan böyle devam etmelisin:)</string>
-    <string name="r_kilo">Kilo fazlası -> Bazenleri yemeği fazla kacirabiliyorsun. Beslenmene biraz daha dikkat edersen, cabucak fit bir vücuda sahip olabilirsin :)</string>
-    <string name="asiri_kilo">Aşırı kilolu -> Vücudundaki yağ oranı çok fazla. Bu sorunu çözebilmen icin günlük beslenme şeklini değiştirmeli ve sporları ihmal etmemelisin :)</string>
+    <string name="ince">Slim-> You are too thin, you need a little more regular and quality nutrition :)</string>
+    <string name="fit"> Fit -> You have great body measurement. How you are eating you should continue like this :)</string>
+    <string name="r_kilo">Overweight -> Sometimes you eat the food too much. If you pay more attention to your diet, you can quickly have a fit body :)</string>
+    <string name="asiri_kilo">Very Overweight -> Too much fat in your body. To solve this problem, you should change your daily diet and not stopped sports :)</string>
     <array name="cinsiyet">
         <item>Male</item>
         <item>Famale</item>
