@@ -248,7 +248,7 @@
         android:layout_gravity="center"
         android:layout_weight="0"
         android:onClick="onClick"
-        android:text="HESAPLA">
+        android:text="@string/calc_btn">
 
     </Button>
 

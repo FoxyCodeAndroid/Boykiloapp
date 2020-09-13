@@ -1,25 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Beden Ölçer</string>
     <string name="admob_app_id">ca-app-pub-2074230064138175~2330983470</string>
     <string name="admob_banner_id">ca-app-pub-2074230064138175/2306932749</string>
-    <string name="boy">Boy</string>
-    <string name="kilo">Kilo</string>
+    <string name="boy">Size</string>
+    <string name="kilo">Weigth</string>
     <string name="ince">İnce-> Gereğin fazla zayıfsın biraz daha düzenli ve kaliteli beslenmeye ihtiyacın var:)</string>
     <string name="fit"> Fit -> Harika vücut ölçülerine sahipsin, nasıl besleniyorsan böyle devam etmelisin:)</string>
     <string name="r_kilo">Kilo fazlası -> Bazenleri yemeği fazla kacirabiliyorsun. Beslenmene biraz daha dikkat edersen, cabucak fit bir vücuda sahip olabilirsin :)</string>
     <string name="asiri_kilo">Aşırı kilolu -> Vücudundaki yağ oranı çok fazla. Bu sorunu çözebilmen icin günlük beslenme şeklini değiştirmeli ve sporları ihmal etmemelisin :)</string>
     <array name="cinsiyet">
-        <item>Erkek</item>
-        <item>Kadın</item>
+        <item>Male</item>
+        <item>Famale</item>
     </array>
     <array name="ten">
-        <item>Beyaz Tenli</item>
-        <item>Esmer Tenli</item>
-        <item>Zenci Tenli</item>
-        <item>Sarışın Tenli</item>
+        <item>White Skinned</item>
+        <item>Brunette Skinned</item>
+        <item>Dark Skinned</item>
+        <item>Blond Skinned</item>
     </array>
-    <string name="first_person">1. Kişi</string>
-    <string name="second_person">2. Kişi</string>
-    <string name="error_message">Değerleri giriniz!</string>
-    <string name="calc_btn">Hesapla</string>
+    <string name="first_person">1nd Person</string>
+    <string name="second_person">2rd Person</string>
+    <string name="error_message">Enter the values!</string>
+    <string name="calc_btn">Calculate</string>
 </resources>

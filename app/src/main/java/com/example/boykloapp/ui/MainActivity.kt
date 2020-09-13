@@ -39,8 +39,8 @@ class MainActivity : AppCompatActivity() {
         txtView_result1.movementMethod = ScrollingMovementMethod()
         txtView_result2.movementMethod = ScrollingMovementMethod()
 
-        MaleUtil.imgView1=imgView1
-        FameleUtil.imgView2=imgView2
+        MaleUtil.imgView1 = imgView1
+        FameleUtil.imgView2 = imgView2
 
         genderList = resources.getStringArray(R.array.cinsiyet).toList()
         skinColorList = resources.getStringArray(R.array.ten).toList()
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                 id: Long
             ) {
                 genderSelectedItem1 = position
-                bundle.putString("Cinsiyet 1", listview_cinsiyet.selectedItem.toString());
+                bundle.putString("Cinsiyet 1", listview_cinsiyet.selectedItem.toString())
 
             }
 
@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
                 id: Long
             ) {
                 MaleUtil.bodyTypeSelectedItem1 = position
-                bundle.putString("Ten Reng, 1", listview_ten_rengi.selectedItem.toString());
+                bundle.putString("Ten Reng, 1", listview_ten_rengi.selectedItem.toString())
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity() {
                 id: Long
             ) {
                 genderSelectedItem2 = position
-                bundle.putString("Cinsiyet 2", listview_cinsiyet2.selectedItem.toString());
+                bundle.putString("Cinsiyet 2", listview_cinsiyet2.selectedItem.toString())
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -118,7 +118,7 @@ class MainActivity : AppCompatActivity() {
                 id: Long
             ) {
                 FameleUtil.bodyTypeSelectedItem2 = position
-                bundle.putString("Ten Rengi 2", listview_ten_rengi2.selectedItem.toString());
+                bundle.putString("Ten Rengi 2", listview_ten_rengi2.selectedItem.toString())
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -128,10 +128,10 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun calBodyMass(cm:Float, weight: Float): Float {
-        bundle.putFloat("Boy", cm);
-        bundle.putFloat("Agırlık", weight);
-        return weight / ((cm * cm)/10000)
+    fun calBodyMass(cm: Float, weight: Float): Float {
+        bundle.putFloat("Boy", cm)
+        bundle.putFloat("Agırlık", weight)
+        return weight / ((cm * cm) / 10000)
     }
 
     fun checkEmpty(lentghEt: String?, weightEt: String?): Boolean {
@@ -151,7 +151,7 @@ class MainActivity : AppCompatActivity() {
                         etxt_boy.text.toString().toFloat(),
                         etxt_kilo.text.toString().toFloat()
                     )
-                    txtView_result1.text = MyUtils.resCal(result1,this)
+                    txtView_result1.text = MyUtils.resCal(result1, this)
                     genderSelectedItem1?.let { MaleUtil.setImg(it) }
                 } else
                     MyUtils.showErrorToast(this)
@@ -160,9 +160,9 @@ class MainActivity : AppCompatActivity() {
                         etxt_boy2.text.toString().toFloat(),
                         etxt_kilo2.text.toString().toFloat()
                     )
-                    txtView_result2.text = MyUtils.resCal(result2,this)
+                    txtView_result2.text = MyUtils.resCal(result2, this)
                     genderSelectedItem2?.let { FameleUtil.setImg2(it) }
-                    mFirebaseAnalytics?.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+                    mFirebaseAnalytics?.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle)
                 } else
                     MyUtils.showErrorToast(this)
             }
