@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.foxycode.bedenolcer.R
-import com.google.android.gms.ads.MobileAds
 
 class SplashActivity : AppCompatActivity() {
     private val SPLASH_TIME_OUT:Long=2000
@@ -13,7 +12,6 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        MobileAds.initialize(this)
         Handler().postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
             finish()

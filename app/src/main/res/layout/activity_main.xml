@@ -257,7 +257,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         ads:adSize="SMART_BANNER"
-        ads:adUnitId="@string/admob_banner_id">
+        ads:adUnitId="ca-app-pub-2074230064138175/2976503235">
     </com.google.android.gms.ads.AdView>
 
 </LinearLayout>

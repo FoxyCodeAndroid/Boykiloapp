@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Body Size</string>
     <string name="admob_app_id">ca-app-pub-2074230064138175~2330983470</string>
-    <string name="admob_banner_id">ca-app-pub-2074230064138175/2306932749</string>
+    <string name="admob_banner_id">ca-app-pub-2074230064138175/2976503235</string>
     <string name="boy">Size</string>
     <string name="kilo">Weigth</string>
     <string name="ince">Slim-> You are too thin, you need a little more regular and quality nutrition :)</string>

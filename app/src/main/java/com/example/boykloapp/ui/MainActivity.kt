@@ -12,30 +12,43 @@ import com.example.boykloapp.Utils.MaleUtil
 import com.example.boykloapp.Utils.MyUtils
 import com.foxycode.bedenolcer.R
 import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
+import com.google.android.play.core.review.ReviewInfo
+import com.google.android.play.core.review.ReviewManager
+import com.google.android.play.core.review.ReviewManagerFactory
+import com.google.android.play.core.tasks.Task
 import com.google.firebase.analytics.FirebaseAnalytics
 import kotlinx.android.synthetic.main.activity_main.*
 
+
 class MainActivity : AppCompatActivity() {
-    var genderList = listOf<String>()
-    var skinColorList = listOf<String>()
-    var result1: Float = 0.0f
-    var result2: Float = 0.0f
-    var genderSelectedItem1: Int? = null
-    var genderSelectedItem2: Int? = null
-    var bundle = Bundle()
+    private var genderList = listOf<String>()
+    private var skinColorList = listOf<String>()
+    private var result1: Float = 0.0f
+    private var result2: Float = 0.0f
+    private var genderSelectedItem1: Int? = null
+    private var genderSelectedItem2: Int? = null
+    private var bundle = Bundle()
+    private var reviewManager: ReviewManager? = null
+    lateinit var mAdView: AdView
 
     private var mFirebaseAnalytics: FirebaseAnalytics? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        MobileAds.initialize(this) {}
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
-        val adRequest: AdRequest = AdRequest.Builder().build()
-        adView.loadAd(adRequest)
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+        reviewManager = ReviewManagerFactory.create(this)
+        showRateApp()
         setView()
     }
 
-    fun setView() {
+    private fun setView() {
         txtView_result1.movementMethod = ScrollingMovementMethod()
         txtView_result2.movementMethod = ScrollingMovementMethod()
 
@@ -47,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
         val genderAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, genderList)
         listview_cinsiyet.prompt = "Cinsiyet"
-        listview_cinsiyet?.setAdapter(genderAdapter)
+        listview_cinsiyet?.adapter = genderAdapter
 
         listview_cinsiyet.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -68,7 +81,7 @@ class MainActivity : AppCompatActivity() {
 
         val skinColorAdapter =
             ArrayAdapter(this, android.R.layout.simple_spinner_item, skinColorList)
-        listview_ten_rengi?.setAdapter(skinColorAdapter)
+        listview_ten_rengi?.adapter = skinColorAdapter
 
         listview_ten_rengi.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -87,7 +100,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val genderAdapter2 = ArrayAdapter(this, android.R.layout.simple_spinner_item, genderList)
-        listview_cinsiyet2?.setAdapter(genderAdapter2)
+        listview_cinsiyet2?.adapter = genderAdapter2
 
         listview_cinsiyet2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -108,7 +121,7 @@ class MainActivity : AppCompatActivity() {
         val skinColorAdapter2 =
             ArrayAdapter(this, android.R.layout.simple_spinner_item, skinColorList)
         listview_ten_rengi2.prompt = "Ten Rengi"
-        listview_ten_rengi2?.setAdapter(skinColorAdapter2)
+        listview_ten_rengi2?.adapter = skinColorAdapter2
 
         listview_ten_rengi2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -128,13 +141,13 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun calBodyMass(cm: Float, weight: Float): Float {
+    private fun calBodyMass(cm: Float, weight: Float): Float {
         bundle.putFloat("Boy", cm)
         bundle.putFloat("Agırlık", weight)
         return weight / ((cm * cm) / 10000)
     }
 
-    fun checkEmpty(lentghEt: String?, weightEt: String?): Boolean {
+    private fun checkEmpty(lentghEt: String?, weightEt: String?): Boolean {
         if (TextUtils.isEmpty(lentghEt))
             return false
         if (TextUtils.isEmpty(weightEt))
@@ -170,5 +183,17 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    fun showRateApp() {
+        val request: Task<ReviewInfo> = reviewManager!!.requestReviewFlow()
+        request.addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                val reviewInfo: ReviewInfo = task.result
+                val flow: Task<Void> = reviewManager!!.launchReviewFlow(this, reviewInfo)
+                flow.addOnCompleteListener { }
+            } else {
+                //Hata vs icin
+            }
+        }
+    }
 }
 
