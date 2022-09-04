@@ -145,4 +145,11 @@
     <color name="navy">#000080</color>
     <color name="black">#000000</color>
     <color name="main_gray">#8F8D8D</color>
+    <color name="main_gray2">#9C989B</color>
+    <color name="main_screen_btn">#ef5f7a</color>
+
+
+
+
+
 </resources>
