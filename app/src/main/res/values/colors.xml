@@ -144,4 +144,5 @@
     <color name="dark_blue">#00008B</color>
     <color name="navy">#000080</color>
     <color name="black">#000000</color>
+    <color name="main_gray">#8F8D8D</color>
 </resources>
