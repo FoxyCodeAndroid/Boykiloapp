@@ -7,9 +7,9 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
-import com.example.boykloapp.Utils.FameleUtil
-import com.example.boykloapp.Utils.MaleUtil
-import com.example.boykloapp.Utils.MyUtils
+import com.example.boykloapp.utils.FameleUtil
+import com.example.boykloapp.utils.MaleUtil
+import com.example.boykloapp.utils.MyUtils
 import com.foxycode.bedenolcer.R
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
