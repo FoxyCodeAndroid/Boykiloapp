@@ -22,4 +22,6 @@
     <string name="second_person">2. Kişi</string>
     <string name="error_message">Değerleri giriniz!</string>
     <string name="calc_btn">Hesapla</string>
+
+
 </resources>

@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_gray2"
+    tools:context="com.example.boykloapp.ui.CoupleActivity">
+
+
+    <EditText
+        android:id="@+id/couple_edit_height2"
+        android:layout_width="184dp"
+        android:layout_height="41dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/rul"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/include_custom_toolbar_couple"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <Spinner
+        android:id="@+id/listview_cinsiyet_couple"
+        style="@style/Widget.AppCompat.Spinner"
+        android:layout_width="111dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView19"
+        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintStart_toEndOf="@+id/textView19"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    <Spinner
+        android:id="@+id/listview_cinsiyet_couple2"
+        style="@style/Widget.AppCompat.Spinner"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rul"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <ImageView
+        android:id="@+id/rul"
+        android:layout_width="0dp"
+        android:layout_height="360dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView7"
+        app:layout_constraintStart_toEndOf="@+id/couple_edit_age"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ruler" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="172dp"
+        android:text="Age"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="103dp"
+        android:text="Age"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/include" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:text="Gender"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/couple_edit_height" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="114dp"
+        android:text="Gender"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rul"
+        app:layout_constraintTop_toBottomOf="@+id/couple_edit_height2" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="Height"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/couple_edit_weight" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Height"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/rul"
+        app:layout_constraintTop_toBottomOf="@+id/couple_edit_weight2" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="87dp"
+        android:layout_height="20dp"
+        android:text="Weight"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/couple_edit_age" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="93dp"
+        android:text="Weight"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/rul"
+        app:layout_constraintTop_toBottomOf="@+id/couple_edit_age2" />
+
+    <EditText
+        android:id="@+id/couple_edit_age"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/rul"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <EditText
+        android:id="@+id/couple_edit_age2"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/couple_edit_weight2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/couple_edit_height"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="58dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+    <EditText
+        android:id="@+id/couple_edit_weight"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toStartOf="@+id/rul"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+    <EditText
+        android:id="@+id/couple_edit_weight2"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rul"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" /><![CDATA[
+
+    " />
+
+    ]]>
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="41dp"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:text="KG"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/couple_edit_weight"
+        app:layout_constraintEnd_toStartOf="@+id/rul"
+        app:layout_constraintTop_toTopOf="@+id/couple_edit_weight" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="37dp"
+        android:layout_height="31dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="KG"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/couple_edit_weight2"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="38dp"
+        android:layout_height="33dp"
+        android:gravity="center"
+        android:text="CM"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/couple_edit_height"
+        app:layout_constraintEnd_toStartOf="@+id/rul"
+        app:layout_constraintTop_toTopOf="@+id/couple_edit_height" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="33dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="4dp"
+        android:gravity="center"
+        android:text="CM"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/couple_edit_height2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/couple_edit_height2" />
+
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="142dp"
+        android:layout_height="0dp"
+        android:background="@drawable/single_custom_button_result"
+        android:drawableRight="@drawable/single_button_corner2"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:onClick="couple_btn_result"
+        android:text="RESULT"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rul" />
+
+    <TextView
+        android:id="@+id/couple_height_text"
+        android:layout_width="91dp"
+        android:layout_height="36dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Height"
+        android:visibility="invisible"
+        android:textSize="15sp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/couple_height_text2"
+        android:layout_width="91dp"
+        android:layout_height="36dp"
+        android:ems="10"
+        android:layout_marginBottom="30dp"
+        android:inputType="textPersonName"
+        android:text="Height"
+        android:visibility="invisible"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintStart_toEndOf="@+id/couple_height_text" />
+
+    <TextView
+        android:id="@+id/couple_weight_text"
+        android:layout_width="91dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="28dp"
+        android:ems="10"
+        android:visibility="invisible"
+        android:inputType="textPersonName"
+        android:text="Weight"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/couple_height_text"
+        app:layout_constraintEnd_toEndOf="@+id/couple_height_text"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/couple_weight_text2"
+        android:layout_width="91dp"
+        android:layout_height="36dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Weight"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/couple_height_text2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintStart_toEndOf="@+id/couple_weight_text" />
+
+    <params.com.stepprogressview.StepProgressView
+
+        android:id="@+id/pb_couple"
+        android:layout_width="200dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/progressbar_color"
+        app:currentProgress="45"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView26"
+        app:markerColor="@android:color/black"
+        app:markerWidth="13dp"
+        app:markers="0,30,70,90,120"
+        app:progressColor="#F19A19"
+        app:textMargin="5dp"
+        app:textSize="15sp"
+        app:totalProgress="150" />
+
+    <params.com.stepprogressview.StepProgressView
+
+        android:id="@+id/pb_couple2"
+        android:layout_width="196dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="212dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/progressbar_color"
+        app:currentProgress="45"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView26"
+        app:markerColor="@android:color/black"
+        app:markerWidth="13dp"
+        app:markers="0,30,70,90,120"
+        app:progressColor="#F19A19"
+        app:textMargin="5dp"
+        app:textSize="15sp"
+        app:totalProgress="150" />
+
+    <TextView
+        android:id="@+id/couple_result_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/couple_weight_text"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/couple_result_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.759"
+        app:layout_constraintStart_toEndOf="@+id/couple_result_text"
+        app:layout_constraintTop_toBottomOf="@+id/pb_couple" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

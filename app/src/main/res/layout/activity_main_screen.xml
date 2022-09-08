@@ -11,8 +11,8 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="241dp"
-        android:layout_height="247dp"
+        android:layout_width="249dp"
+        android:layout_height="205dp"
         android:layout_gravity="center"
         android:layout_marginStart="72dp"
         android:layout_marginTop="25dp"
@@ -58,80 +58,70 @@
         android:textSize="60sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_single"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
-    <Button
+    <TextView
         android:id="@+id/btn_single"
-        android:layout_width="319dp"
-        android:layout_height="64dp"
+        android:layout_width="330dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/mainscreen_custom_button"
+        android:onClick="single"
+        android:drawableRight="@drawable/buttonright"
         android:text="SINGLE"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_couple"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <Button
+    <TextView
         android:id="@+id/btn_about"
         android:layout_width="330dp"
         android:layout_height="0dp"
         android:layout_marginBottom="25dp"
         android:background="@drawable/mainscreen_custom_button"
+        android:onClick="aboutus"
         android:text="ABOUT US"
+        android:textAlignment="center"
+        android:drawableRight="@drawable/buttonrightperson"
+        android:textColor="@color/white"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_couple" />
 
-    <Button
+    <TextView
         android:id="@+id/btn_couple"
         android:layout_width="330dp"
         android:layout_height="0dp"
         android:layout_marginBottom="35dp"
         android:background="@drawable/mainscreen_custom_button"
+        android:onClick="couple"
         android:text="COUPLE"
+        android:drawableRight="@drawable/buttonright"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_about"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_single" />
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="79dp"
-        android:layout_height="63dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_couple"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/buttonkose" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="79dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="34dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_couple"
-        app:srcCompat="@drawable/buttonkose" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="79dp"
-        android:layout_height="63dp"
-        android:layout_marginBottom="33dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/buttonkose" />
-
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="imageView7" />
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -54,4 +54,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.1'
     implementation "com.google.android.play:core:1.10.3"
 
+    //progress bar
+    implementation 'com.params.progressview:step-progress:1.0.2'
+
 }

@@ -1,10 +1,8 @@
 package com.example.boykloapp.Utils
 
 import android.content.Context
-import android.widget.ImageView
 import android.widget.Toast
 import com.foxycode.bedenolcer.R
-import kotlinx.android.synthetic.main.activity_main.*
 
 
 object MyUtils {
