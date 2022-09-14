@@ -27,7 +27,7 @@ class SingleActivity : AppCompatActivity() {
         setView()
     }
     private fun setView() {
-        single_result_text.movementMethod = ScrollingMovementMethod()
+        //single_result_text.movementMethod = ScrollingMovementMethod()
 
         genderList = resources.getStringArray(R.array.cinsiyet).toList()
 
