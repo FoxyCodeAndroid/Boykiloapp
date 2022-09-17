@@ -8,7 +8,7 @@
         android:id="@+id/coupleFragment"
         android:name="com.example.boykloapp.ui.CoupleFragment"
         android:label="fragment_couple2"
-        tools:layout="@layout/fragment_couple2" >
+        tools:layout="@layout/fragment_couple" >
         <action
             android:id="@+id/action_coupleFragment_to_mainScreenFragment"
             app:destination="@id/mainScreenFragment" />
@@ -41,7 +41,7 @@
         android:id="@+id/singleFragment"
         android:name="com.example.boykloapp.ui.SingleFragment"
         android:label="fragment_single2"
-        tools:layout="@layout/fragment_single2" >
+        tools:layout="@layout/fragment_single" >
         <action
             android:id="@+id/action_singleFragment_to_mainScreenFragment"
             app:destination="@id/mainScreenFragment" />

@@ -23,4 +23,6 @@
     <string name="second_person">2rd Person</string>
     <string name="error_message">Enter the values!</string>
     <string name="calc_btn">Calculate</string>
+    <string name="single">SINGLE</string>
+    <string name="couple">COUPLE</string>
 </resources>
