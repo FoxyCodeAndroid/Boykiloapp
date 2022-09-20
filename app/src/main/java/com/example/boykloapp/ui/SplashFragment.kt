@@ -22,7 +22,6 @@ class SplashFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Log.e("alp","alp")
         Handler(Looper.myLooper()!!).postDelayed({
             findNavController().navigate(R.id.splash1action)
         }, SPLASH_TIME_OUT)

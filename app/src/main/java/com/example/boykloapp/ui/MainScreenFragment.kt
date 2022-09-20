@@ -33,7 +33,6 @@ class MainScreenFragment : Fragment() {
         _binding = null
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        Log.e("alp2","alp2")
         super.onViewCreated(view, savedInstanceState)
 
        binding.btnSingle.setOnClickListener {
