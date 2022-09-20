@@ -49,8 +49,9 @@ class CoupleFragment : Fragment() {
         setView()
         super.onViewCreated(view, savedInstanceState)
 
-        btn_couple_result.setOnClickListener {
-            pb_couple.currentProgress = 60
+        binding.btnCoupleResult.setOnClickListener {
+
+         binding.pbCouple.currentProgress = 60
 
             if (checkEmpty(
                     binding.coupleEditHeight.text.toString(),
@@ -63,31 +64,31 @@ class CoupleFragment : Fragment() {
                 )
                 binding.coupleResultText.text = MyUtils.resCal(result1, requireContext())
                 genderSelectedItem1?.let { MaleUtil.setImg(it) }
-                binding.coupleWeightText.text = "Weight :  ${binding.coupleEditHeight.text}"
-                binding.coupleEditHeight.text = "Height :  ${binding.coupleWeightText.text}"
+                binding.coupleWeightText.text = "Weight :  ${binding.coupleEditWeight.text}"
+                binding.coupleHeightText.text = "Height :  ${binding.coupleEditHeight.text}"
                 binding.pbCouple.visibility = View.VISIBLE
                 binding.coupleWeightText.visibility = View.VISIBLE
                 binding.coupleHeightText.visibility = View.VISIBLE
             } else
                 MyUtils.showErrorToast(requireContext())
 //couple
-            pb_couple2.currentProgress = 80
+            binding.pbCouple2.currentProgress = 80
             if (checkEmpty(
-                    couple_edit_height2.text.toString(),
-                    couple_edit_weight2.text.toString()
+                    binding.coupleEditHeight2.text.toString(),
+                    binding.coupleEditWeight2.text.toString(),
                 )
             ) {
                 result1 = calBodyMass(
-                    couple_edit_height2.text.toString().toFloat(),
-                    couple_edit_weight2.text.toString().toFloat()
+                    binding.coupleEditHeight2.text.toString().toFloat(),
+                    binding.coupleEditWeight2.text.toString().toFloat()
                 )
-                couple_result_text2.text = MyUtils.resCal(result1, requireContext())
+                binding.coupleResultText2.text =MyUtils.resCal(result1, requireContext())
                 genderSelectedItem1?.let { MaleUtil.setImg(it) }
-                couple_weight_text2.text = "Weight :  ${couple_edit_height2.text}"
-                couple_height_text2.text = "Height :  ${couple_edit_weight2.text}"
-                pb_couple2.visibility = View.VISIBLE
-                couple_weight_text2.visibility = View.VISIBLE
-                couple_height_text2.visibility = View.VISIBLE
+                binding.coupleWeightText2.text = "Weight :  ${binding.coupleEditHeight2.text}"
+                binding.coupleHeightText2.text = "Height :  ${binding.coupleEditHeight2.text}"
+                binding.pbCouple2.visibility = View.VISIBLE
+                binding.coupleWeightText2.visibility = View.VISIBLE
+                binding.coupleHeightText2.visibility = View.VISIBLE
             } else
                 MyUtils.showErrorToast(requireContext())
             clear()
@@ -95,12 +96,12 @@ class CoupleFragment : Fragment() {
     }
 
     private fun clear() {
-        couple_edit_age.text.clear()
-        couple_edit_weight.text.clear()
-        couple_edit_height.text.clear()
-        couple_edit_age2.text.clear()
-        couple_edit_weight2.text.clear()
-        couple_edit_height2.text.clear()
+        binding.coupleEditAge.text.clear()
+        binding.coupleEditHeight.text.clear()
+        binding.coupleEditWeight.text.clear()
+        binding.coupleEditAge2.text.clear()
+        binding.coupleEditHeight2.text.clear()
+        binding.coupleEditWeight2.text.clear()
 
     }
 

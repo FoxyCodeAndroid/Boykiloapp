@@ -12,13 +12,17 @@ import android.widget.Toast
 import com.example.boykloapp.Utils.MaleUtil
 import com.example.boykloapp.Utils.MyUtils
 import com.foxycode.bedenolcer.R
-import kotlinx.android.synthetic.main.fragment_single2.*
+import com.foxycode.bedenolcer.databinding.FragmentSingleBinding
+import kotlinx.android.synthetic.main.fragment_single.*
 
 class SingleFragment : Fragment() {
     private var bundle = Bundle()
     private var genderList = listOf<String>()
     private var result1: Float = 0.0f
     private var genderSelectedItem1: Int? = null
+
+    private var _binding: FragmentSingleBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,31 +32,38 @@ class SingleFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_single, container, false)
+        _binding = FragmentSingleBinding.inflate(inflater, container, false)
+        return binding.root
     }
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setView()
         super.onViewCreated(view, savedInstanceState)
 
-        btn_single_result.setOnClickListener {
-            pb.currentProgress = 130
-            if (checkEmpty(single_edit_height.text.toString(), single_edit_weight.text.toString())) {
+       binding.btnSingleResult.setOnClickListener {
+           binding.pb.currentProgress = 130
+            if (checkEmpty(
+                   binding.singleEditHeight.text.toString(),
+                   binding.singleEditWeight.text.toString()
+                )) {
                 result1 = calBodyMass(
-                    single_edit_height.text.toString().toFloat(),
-                    single_edit_weight.text.toString().toFloat()
+                   binding.singleEditHeight.text.toString().toFloat(),
+                    binding.singleEditWeight.text.toString().toFloat()
                 )
-                single_result_text.text = MyUtils.resCal(result1, requireContext())
+                binding.singleResultText.text=MyUtils.resCal(result1, requireContext())
                 genderSelectedItem1?.let { MaleUtil.setImg(it) }
-                single_weight_text.text = "Weight :  ${single_edit_weight.text}"
-                single_height_text.text = "Height :  ${single_edit_height.text}"
-                single_age_text.text =    "Age :  ${ single_edit_age.text }"
-                pb.visibility = View.VISIBLE
-                single_age_text.visibility = View.VISIBLE
-                single_weight_text.visibility = View.VISIBLE
-                single_height_text.visibility = View.VISIBLE
-                single_gender_text.visibility = View.VISIBLE
+                binding.singleWeightText.text= "Weight :  ${binding.singleEditWeight.text}"
+                binding.singleHeightText.text = "Height :  ${binding.singleEditHeight.text}"
+                binding.singleAgeText.text = "Height :  ${binding.singleEditAge.text}"
+                binding.pb.visibility = View.VISIBLE
+                binding.singleAgeText.visibility = View.VISIBLE
+                binding.singleWeightText.visibility = View.VISIBLE
+                binding.singleHeightText.visibility = View.VISIBLE
+                binding.singleGenderText.visibility = View.VISIBLE
             } else
                 MyUtils.showErrorToast(requireContext())
             clear()
@@ -65,10 +76,11 @@ class SingleFragment : Fragment() {
         genderList = resources.getStringArray(R.array.cinsiyet).toList()
 
         val genderAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, genderList)
-        listview_cinsiyet_single.prompt = "Cinsiyet"
-        listview_cinsiyet_single?.adapter = genderAdapter
 
-        listview_cinsiyet_single.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        binding.listviewCinsiyetSingle.prompt = "Cinsiyet"
+        binding.listviewCinsiyetSingle.adapter = genderAdapter
+
+        binding.listviewCinsiyetSingle.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>,
                 view: View,
@@ -76,7 +88,7 @@ class SingleFragment : Fragment() {
                 id: Long
             ) {
                 genderSelectedItem1 = position
-                bundle.putString("Cinsiyet 1", listview_cinsiyet_single.selectedItem.toString())
+                bundle.putString("Cinsiyet 1", binding.listviewCinsiyetSingle.selectedItem.toString())
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 Toast.makeText(requireContext(), "Select Gender", Toast.LENGTH_SHORT).show()
@@ -96,8 +108,9 @@ class SingleFragment : Fragment() {
         return weight / ((cm * cm) / 10000)
     }
     private fun clear(){
-        single_edit_age.text.clear()
-        single_edit_weight.text.clear()
-        single_edit_height.text.clear()
+        binding.singleEditWeight.text.clear()
+        binding.singleEditAge.text.clear()
+        binding.singleEditHeight.text.clear()
+
     }
 }
