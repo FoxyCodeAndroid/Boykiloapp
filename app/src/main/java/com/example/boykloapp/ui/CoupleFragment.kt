@@ -55,12 +55,12 @@ class CoupleFragment : Fragment() {
 
             if (checkEmpty(
                     binding.coupleEditHeight.text.toString(),
-                    binding.coupleWeightText.text.toString()
+                    binding.coupleEditWeight.text.toString()
                 )
             ) {
                 result1 = calBodyMass(
                     binding.coupleEditHeight.text.toString().toFloat(),
-                    binding.coupleWeightText.text.toString().toFloat()
+                    binding.coupleEditWeight.text.toString().toFloat()
                 )
                 binding.coupleResultText.text = MyUtils.resCal(result1, requireContext())
                 genderSelectedItem1?.let { MaleUtil.setImg(it) }
