@@ -11,8 +11,8 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import com.example.boykloapp.Utils.MaleUtil
-import com.example.boykloapp.Utils.MyUtils
+import com.example.boykloapp.utils.MaleUtil
+import com.example.boykloapp.utils.MyUtils
 import com.foxycode.bedenolcer.R
 import com.foxycode.bedenolcer.databinding.FragmentCoupleBinding
 import com.google.android.play.core.review.ReviewManager
@@ -62,15 +62,15 @@ class CoupleFragment : Fragment() {
                     binding.coupleEditHeight.text.toString().toFloat(),
                     binding.coupleEditWeight.text.toString().toFloat()
                 )
-                binding.coupleResultText.text = MyUtils.resCal(result1, requireContext())
-                genderSelectedItem1?.let { MaleUtil.setImg(it) }
+                // binding.coupleResultText.text = MyUtils.resCal(result1, requireContext()) // result kısmı presenterdan dönecek
+                 // genderSelectedItem1?.let { MaleUtil.setImg(it) }
                 binding.coupleWeightText.text = "Weight :  ${binding.coupleEditWeight.text}"
                 binding.coupleHeightText.text = "Height :  ${binding.coupleEditHeight.text}"
                 binding.pbCouple.visibility = View.VISIBLE
                 binding.coupleWeightText.visibility = View.VISIBLE
                 binding.coupleHeightText.visibility = View.VISIBLE
             } else
-                MyUtils.showErrorToast(requireContext())
+                //MyUtils.showErrorToast(requireContext()) error tarafıda presenterdan dönecek
 //couple
             binding.pbCouple2.currentProgress = 80
             if (checkEmpty(

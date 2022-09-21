@@ -2,18 +2,17 @@ package com.example.boykloapp.ui
 
 import android.os.Bundle
 import android.text.TextUtils
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import com.example.boykloapp.Utils.MaleUtil
-import com.example.boykloapp.Utils.MyUtils
+import androidx.fragment.app.Fragment
+import com.example.boykloapp.utils.MaleUtil
+import com.example.boykloapp.utils.MyUtils
 import com.foxycode.bedenolcer.R
 import com.foxycode.bedenolcer.databinding.FragmentSingleBinding
-import kotlinx.android.synthetic.main.fragment_single.*
 
 class SingleFragment : Fragment() {
     private var bundle = Bundle()
@@ -54,7 +53,7 @@ class SingleFragment : Fragment() {
                    binding.singleEditHeight.text.toString().toFloat(),
                     binding.singleEditWeight.text.toString().toFloat()
                 )
-                binding.singleResultText.text=MyUtils.resCal(result1, requireContext())
+                binding.singleResultText.text= MyUtils.resCal(result1, requireContext())
                 genderSelectedItem1?.let { MaleUtil.setImg(it) }
                 binding.singleWeightText.text= "Weight :  ${binding.singleEditWeight.text}"
                 binding.singleHeightText.text = "Height :  ${binding.singleEditHeight.text}"
