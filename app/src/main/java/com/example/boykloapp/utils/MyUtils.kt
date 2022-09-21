@@ -1,4 +1,4 @@
-package com.example.boykloapp.Utils
+package com.example.boykloapp.utils
 
 import android.content.Context
 import android.widget.Toast

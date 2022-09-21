@@ -1,4 +1,4 @@
-package com.example.boykloapp.Utils
+package com.example.boykloapp.utils
 
 import android.widget.ImageView
 import com.foxycode.bedenolcer.R
