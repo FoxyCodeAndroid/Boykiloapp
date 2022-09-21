@@ -2,6 +2,7 @@ package com.example.boykloapp.ui
 
 import android.os.Bundle
 import android.text.TextUtils
+import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,10 +10,13 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.boykloapp.repository.IndexCalculationRepository
 import com.example.boykloapp.utils.MaleUtil
 import com.example.boykloapp.utils.MyUtils
+import com.example.boykloapp.utils.SettingsUtils
 import com.foxycode.bedenolcer.R
 import com.foxycode.bedenolcer.databinding.FragmentSingleBinding
+import kotlinx.android.synthetic.main.fragment_couple.*
 
 class SingleFragment : Fragment() {
     private var bundle = Bundle()
@@ -43,34 +47,35 @@ class SingleFragment : Fragment() {
         setView()
         super.onViewCreated(view, savedInstanceState)
 
+        if (SettingsUtils.chosenSettings == false){
+            binding.singleMassText1.text = "lb"
+            binding.singleMassText2.text = "in"
+        }
        binding.btnSingleResult.setOnClickListener {
-           binding.pb.currentProgress = 130
-            if (checkEmpty(
-                   binding.singleEditHeight.text.toString(),
-                   binding.singleEditWeight.text.toString()
-                )) {
-                result1 = calBodyMass(
-                   binding.singleEditHeight.text.toString().toFloat(),
-                    binding.singleEditWeight.text.toString().toFloat()
-                )
-                binding.singleResultText.text= MyUtils.resCal(result1, requireContext())
-                genderSelectedItem1?.let { MaleUtil.setImg(it) }
-                binding.singleWeightText.text= "Weight :  ${binding.singleEditWeight.text}"
-                binding.singleHeightText.text = "Height :  ${binding.singleEditHeight.text}"
-                binding.singleAgeText.text = "Height :  ${binding.singleEditAge.text}"
-                binding.pb.visibility = View.VISIBLE
-                binding.singleAgeText.visibility = View.VISIBLE
-                binding.singleWeightText.visibility = View.VISIBLE
-                binding.singleHeightText.visibility = View.VISIBLE
-                binding.singleGenderText.visibility = View.VISIBLE
-            } else
-                MyUtils.showErrorToast(requireContext())
-            clear()
+           val cm = binding.singleEditHeight.text.toString()
+           val kg = binding.singleEditWeight.text.toString()
+
+           if (SettingsUtils.chosenSettings==true){
+               if (checkEmpty(binding.singleEditHeight.text.toString(), binding.singleEditWeight.text.toString())) {
+                   result1 = IndexCalculationRepository().calculationBodyCmKg(cm.toFloat(),kg.toFloat())
+                   binding.pb.currentProgress = result1.toInt()
+                   binding.singleResultText.text= IndexCalculationRepository().resCal(result1,requireContext())
+                   binding.pb.visibility = View.VISIBLE
+               } else
+                   IndexCalculationRepository().showErrorToast(requireContext())
+           }else if (SettingsUtils.chosenSettings==false){
+               if (checkEmpty(binding.singleEditHeight.text.toString(), binding.singleEditWeight.text.toString())) {
+                   result1 = IndexCalculationRepository().calculationBodyInchPound(cm.toFloat(),kg.toFloat())
+                   binding.pb.currentProgress = result1.toInt()
+                   binding.singleResultText.text= IndexCalculationRepository().resCal(result1,requireContext())
+                   binding.pb.visibility = View.VISIBLE
+               } else
+                   IndexCalculationRepository().showErrorToast(requireContext())
+           }
         }
     }
-
     private fun setView() {
-        //single_result_text.movementMethod = ScrollingMovementMethod()
+        binding.singleResultText.movementMethod= ScrollingMovementMethod()
 
         genderList = resources.getStringArray(R.array.cinsiyet).toList()
 
@@ -101,15 +106,5 @@ class SingleFragment : Fragment() {
             return false
         return true
     }
-    private fun calBodyMass(cm: Float, weight: Float): Float {
-        bundle.putFloat("Boy", cm)
-        bundle.putFloat("Agırlık", weight)
-        return weight / ((cm * cm) / 10000)
-    }
-    private fun clear(){
-        binding.singleEditWeight.text.clear()
-        binding.singleEditAge.text.clear()
-        binding.singleEditHeight.text.clear()
 
-    }
 }

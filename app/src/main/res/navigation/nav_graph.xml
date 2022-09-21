@@ -36,6 +36,9 @@
         <action
             android:id="@+id/mainactionaboutus"
             app:destination="@id/aboutUsFragment" />
+        <action
+            android:id="@+id/mainactionsettings"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/singleFragment"
@@ -55,4 +58,8 @@
             android:id="@+id/action_aboutUsFragment_to_mainScreenFragment"
             app:destination="@id/mainScreenFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.boykloapp.ui.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>

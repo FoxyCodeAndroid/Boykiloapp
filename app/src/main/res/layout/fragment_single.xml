@@ -91,7 +91,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/textView23"
+                    android:id="@+id/single_mass_text1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -124,7 +124,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/textView25"
+                    android:id="@+id/single_mass_text2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -166,18 +166,18 @@
             <params.com.stepprogressview.StepProgressView
 
                 android:id="@+id/pb"
-                android:layout_width="266dp"
+                android:layout_width="309dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:background="@drawable/progressbar_color"
-                app:currentProgress="105"
                 app:markerColor="@android:color/black"
                 app:markerWidth="3dp"
-                app:markers="30,50,90,120"
+                app:markers="17,25"
                 app:progressColor="#F19A19"
-                app:textMargin="5dp"
-                app:textSize="15sp"
-                app:totalProgress="150" />
+                android:visibility="gone"
+                app:textMargin="1dp"
+                app:textSize="20sp"
+                app:totalProgress="40" />
 
             <TextView
                 android:id="@+id/single_result_text"

@@ -70,7 +70,7 @@
                     android:textSize="10.5dp" />
 
                 <TextView
-                    android:id="@+id/textView23"
+                    android:id="@+id/couple_mass_weight_text1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -105,7 +105,7 @@
                     android:textSize="10.5sp" />
 
                 <TextView
-                    android:id="@+id/textView25"
+                    android:id="@+id/couple_mass_height_text1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -143,43 +143,18 @@
             <params.com.stepprogressview.StepProgressView
 
                 android:id="@+id/pb_couple"
-                android:layout_width="match_parent"
-                android:layout_height="43dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="100dp"
                 android:background="@drawable/progressbar_color"
-                android:visibility="invisible"
-                app:currentProgress="45"
                 app:markerColor="@android:color/black"
-                app:markerWidth="13dp"
-                app:markers="0,30,70,90"
+                app:markerWidth="3dp"
+                app:markers="8,13"
+                android:visibility="gone"
                 app:progressColor="#F19A19"
-                app:textMargin="5dp"
+                app:textMargin="1dp"
                 app:textSize="15sp"
-                app:totalProgress="90" />
-
-            <TextView
-                android:id="@+id/couple_height_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Height"
-                android:textSize="15sp"
-                android:visibility="invisible" />
-
-            <TextView
-                android:id="@+id/couple_weight_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Weight"
-                android:textSize="15sp"
-                android:visibility="invisible" />
+                app:totalProgress="40" />
 
 
         </LinearLayout>
@@ -198,13 +173,12 @@
 
             <TextView
                 android:id="@+id/btn_couple_result"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="77dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="200dp"
                 android:background="@drawable/single_custom_button_result"
-                android:gravity="fill"
+                android:gravity="center"
                 android:onClick="couple_btn_result"
-                android:paddingStart="5dp"
                 android:text="RESULT"
                 android:textSize="15sp" />
 
@@ -253,7 +227,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/couple_edit_height2"
+                    android:id="@+id/couple_edit_weight2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -262,7 +236,7 @@
                     android:textSize="11sp" />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/couple_mass_weight_text2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -287,7 +261,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/couple_edit_weight2"
+                    android:id="@+id/couple_edit_height2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -296,7 +270,7 @@
                     android:textSize="11sp" />
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/couple_mass_height_text2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -334,41 +308,19 @@
             <params.com.stepprogressview.StepProgressView
 
                 android:id="@+id/pb_couple2"
-                android:layout_width="match_parent"
-                android:layout_height="43dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="100dp"
                 android:background="@drawable/progressbar_color"
-                android:visibility="invisible"
-                app:currentProgress="45"
                 app:markerColor="@android:color/black"
-                app:markerWidth="13dp"
-                app:markers="0,30,70,90,120"
+                app:markerWidth="3dp"
+                android:visibility="gone"
+                app:markers="8,13"
                 app:progressColor="#F19A19"
-                app:textMargin="5dp"
+                app:textMargin="1dp"
                 app:textSize="15sp"
-                app:totalProgress="150" />
+                app:totalProgress="40" />
 
-            <TextView
-                android:id="@+id/couple_height_text2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Height"
-                android:textSize="15sp"
-                android:visibility="invisible" />
-
-            <TextView
-                android:id="@+id/couple_weight_text2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Weight"
-                android:textSize="15sp"
-                android:visibility="invisible" />
 
         </LinearLayout>
 
