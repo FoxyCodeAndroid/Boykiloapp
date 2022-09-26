@@ -33,16 +33,7 @@
             android:layout_centerInParent="true"
             android:src="@drawable/female" />
 
-        <ImageView
-            android:id="@+id/imgViewClose"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginEnd="5dp"
-            android:onClick="toolbar_close"
-            android:padding="15dp"
-            android:src="@drawable/admob_close_button_black_circle_white_cross" />
+
     </RelativeLayout>
 
     <View

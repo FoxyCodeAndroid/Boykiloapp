@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/layout/activity_main_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/layout/fragment_about_us.xml" value="0.18034447821681865" />
         <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/layout/fragment_couple.xml" value="0.33" />
         <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/layout/fragment_main_screen.xml" value="0.5" />
         <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/layout/fragment_single.xml" value="0.33" />
+        <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/layout/include_custom_toolbar.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/xml/root_preferences.xml" value="0.33" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable-v24/menuItem.xml" value="0.2085" />

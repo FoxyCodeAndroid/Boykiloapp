@@ -10,20 +10,21 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.boykloapp.repository.IndexCalculationRepository
-import com.example.boykloapp.utils.MaleUtil
-import com.example.boykloapp.utils.MyUtils
+import com.example.boykloapp.View.CalculationResultView
+import com.example.boykloapp.presenter.CalculationPresenter
+import com.example.boykloapp.presenter.Presenter
 import com.example.boykloapp.utils.SettingsUtils
 import com.foxycode.bedenolcer.R
 import com.foxycode.bedenolcer.databinding.FragmentSingleBinding
-import kotlinx.android.synthetic.main.fragment_couple.*
+import es.dmoral.toasty.Toasty
 
-class SingleFragment : Fragment() {
+class SingleFragment : Fragment(),CalculationResultView {
     private var bundle = Bundle()
     private var genderList = listOf<String>()
     private var result1: Float = 0.0f
     private var genderSelectedItem1: Int? = null
 
+    private lateinit var presenter: Presenter
     private var _binding: FragmentSingleBinding? = null
     private val binding get() = _binding!!
 
@@ -47,6 +48,8 @@ class SingleFragment : Fragment() {
         setView()
         super.onViewCreated(view, savedInstanceState)
 
+        presenter = CalculationPresenter(this)
+
         if (SettingsUtils.chosenSettings == false){
             binding.singleMassText1.text = "lb"
             binding.singleMassText2.text = "in"
@@ -57,20 +60,18 @@ class SingleFragment : Fragment() {
 
            if (SettingsUtils.chosenSettings==true){
                if (checkEmpty(binding.singleEditHeight.text.toString(), binding.singleEditWeight.text.toString())) {
-                   result1 = IndexCalculationRepository().calculationBodyCmKg(cm.toFloat(),kg.toFloat())
+                  result1 =  presenter.calculationBodyCmKg(cm.toFloat(),kg.toFloat())
                    binding.pb.currentProgress = result1.toInt()
-                   binding.singleResultText.text= IndexCalculationRepository().resCal(result1,requireContext())
+                   binding.singleResultText.text= presenter.resCal(result1.toInt(),requireContext())
                    binding.pb.visibility = View.VISIBLE
-               } else
-                   IndexCalculationRepository().showErrorToast(requireContext())
+               }
            }else if (SettingsUtils.chosenSettings==false){
                if (checkEmpty(binding.singleEditHeight.text.toString(), binding.singleEditWeight.text.toString())) {
-                   result1 = IndexCalculationRepository().calculationBodyInchPound(cm.toFloat(),kg.toFloat())
+                   result1 = presenter.calculationBodyInchPound(cm.toFloat(),kg.toFloat())
                    binding.pb.currentProgress = result1.toInt()
-                   binding.singleResultText.text= IndexCalculationRepository().resCal(result1,requireContext())
+                   binding.singleResultText.text= presenter.resCal(result1.toInt(),requireContext())
                    binding.pb.visibility = View.VISIBLE
-               } else
-                   IndexCalculationRepository().showErrorToast(requireContext())
+               }
            }
         }
     }
@@ -105,6 +106,14 @@ class SingleFragment : Fragment() {
         if (TextUtils.isEmpty(weightEt))
             return false
         return true
+    }
+
+    override fun onCalculationSuccess(message: String) {
+        Toasty.success(requireContext(), message, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onCalculationError(message: String) {
+        Toasty.error(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
 }
