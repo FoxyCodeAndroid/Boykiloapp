@@ -11,46 +11,36 @@ import com.foxycode.bedenolcer.R
 class CalculationPresenter(private var calculationResultView : CalculationResultView):Presenter {
     override fun calculationBodyCmKg(cm: Float, kg: Float): Float {
         val cBodyCmKg = cBodyCmKg(cm, kg)
-        val code =  cBodyCmKg.isDataValid()
-        if (code == 0)
-            calculationResultView.onCalculationError("Boş olamaz")
-        else if (code ==1)
-            calculationResultView.onCalculationError("0 olamaz")
-        else if (code ==2)
-            calculationResultView.onCalculationError("0 olamaz")
-        else if (code ==3)
-            calculationResultView.onCalculationError("boş olamaz")
-        else
-            calculationResultView.onCalculationSuccess("Ölçüm Başarılı")
+        when (cBodyCmKg.isDataValid()) {//use it when -> cleaning
+            0 -> calculationResultView.onCalculationError("Boş olamaz")
+            1 -> calculationResultView.onCalculationError("0 olamaz")
+            2 -> calculationResultView.onCalculationError("0 olamaz")
+            3 -> calculationResultView.onCalculationError("boş olamaz")
+            else -> calculationResultView.onCalculationSuccess("Ölçüm Başarılı")
+        }
         return kg / ((cm * cm) / 10000)
     }
-    override fun resCal(endex: Int, context: Context) : String {
+    override fun resCal(endex: Int, context: Context) : String { // presenter da context kullanmak doğru olmaz
         val user2 = resCalUser(endex)
-        val code =  user2.isDataValid()
-        if (code == 0)
-            return  context.resources.getString(R.string.ince)
-        else if (code ==1)
-            return  context.resources.getString(R.string.fit)
-        else if (code ==2)
-            return  context.resources.getString(R.string.r_kilo)
-        else if (code ==3)
-            return  context.resources.getString(R.string.asiri_kilo)
-        else
-            return  "Değerlerde problem oldu, tekrar giriniz :)"
+        return when (user2.isDataValid()) { // clean
+            0 -> context.resources.getString(R.string.ince)
+            1 -> context.resources.getString(R.string.fit)
+            2 -> context.resources.getString(R.string.r_kilo)
+            3 -> context.resources.getString(R.string.asiri_kilo)
+            else -> "Değerlerde problem oldu, tekrar giriniz :)" //localization da problem
+        }
     }
     override fun calculationBodyInchPound(inches: Float, pounds: Float): Float {
         val user = cBodyInch(inches,pounds)
-        val code =  user.isDataValid()
-        if (code == 0)
-            calculationResultView.onCalculationError("Boş olamaz")
-        else if (code ==1)
-            calculationResultView.onCalculationError("0 olamaz")
-        else if (code ==2)
-            calculationResultView.onCalculationError("0 olamaz")
-        else if (code ==3)
-            calculationResultView.onCalculationError("boş olamaz")
-        else
-            calculationResultView.onCalculationSuccess("Ölçüm Başarılı")
+        when (user.isDataValid()) {
+            0 -> calculationResultView.onCalculationError("Boş olamaz")
+            1 -> calculationResultView.onCalculationError("0 olamaz")
+            2 -> calculationResultView.onCalculationError("0 olamaz")
+            3 -> calculationResultView.onCalculationError("boş olamaz")
+            //0 ve 3 aynı cevapsa , kulan atıyorum 0,3 -> ...
+            //1 ,2 -> ...
+            else -> calculationResultView.onCalculationSuccess("Ölçüm Başarılı")
+        }
         return ((pounds) / (inches * inches) * 703)
     }
 
