@@ -24,5 +24,17 @@
     <string name="error_message">Enter the values!</string>
     <string name="calc_btn">Calculate</string>
     <string name="single">SINGLE</string>
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="couple">COUPLE</string>
+    <string name="about_us">ABOUT US</string>
+    <string name="no_empty">NOT EMPTY</string>
 </resources>

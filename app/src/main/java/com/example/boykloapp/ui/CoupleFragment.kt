@@ -11,15 +11,15 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import com.example.boykloapp.Utils.ToastUtil
 import com.example.boykloapp.View.CalculationResultView
+import com.example.boykloapp.data.AppMessage
 import com.example.boykloapp.presenter.CalculationPresenter
-import com.example.boykloapp.presenter.Presenter
-import com.example.boykloapp.repository.IndexCalculationRepository
+import com.example.boykloapp.presenter.CalculationViewState
 import com.example.boykloapp.utils.SettingsUtils
 import com.foxycode.bedenolcer.R
 import com.foxycode.bedenolcer.databinding.FragmentCoupleBinding
 import com.google.android.play.core.review.ReviewManager
-import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.fragment_couple.*
 
 class CoupleFragment : Fragment(), CalculationResultView {
@@ -31,7 +31,7 @@ class CoupleFragment : Fragment(), CalculationResultView {
     private var reviewManager: ReviewManager? = null
     private var bundle = Bundle()
 
-    private lateinit var presenter: Presenter
+    private lateinit var presenter: CalculationViewState
     private var _binding: FragmentCoupleBinding? = null
     private val binding get() = _binding!!
 
@@ -55,11 +55,11 @@ class CoupleFragment : Fragment(), CalculationResultView {
 
         presenter = CalculationPresenter(this)
 
-        if (SettingsUtils.chosenSettings == false){
-          binding.coupleMassWeightText1.text = "lb"
-          binding.coupleMassWeightText2.text = "lb"
-          binding.coupleMassHeightText1.text = "in"
-          binding.coupleMassHeightText2.text = "in"
+        if (SettingsUtils.chosenSettings == false) {
+            binding.coupleMassWeightText1.text = "lb"
+            binding.coupleMassWeightText2.text = "lb"
+            binding.coupleMassHeightText1.text = "in"
+            binding.coupleMassHeightText2.text = "in"
         }
 
         binding.btnCoupleResult.setOnClickListener {
@@ -68,35 +68,56 @@ class CoupleFragment : Fragment(), CalculationResultView {
             val cm2 = binding.coupleEditHeight2.text.toString()
             val kg2 = binding.coupleEditWeight2.text.toString()
 
-            if (SettingsUtils.chosenSettings==true){
-                if (checkEmpty(binding.coupleEditHeight.text.toString(), binding.coupleEditWeight.text.toString())) {
-                    result1 =  presenter.calculationBodyCmKg(cm.toFloat(),kg.toFloat())
-                    binding.coupleResultText.text= presenter.resCal(result1.toInt(),requireContext())
-                    binding.pbCouple.currentProgress = result1.toInt()/2
+            if (SettingsUtils.chosenSettings == true) {
+                if (checkEmpty(
+                        binding.coupleEditHeight.text.toString(),
+                        binding.coupleEditWeight.text.toString()
+                    )
+                ) {
+                    result1 = presenter.calculationBodyCmKg(cm.toFloat(), kg.toFloat())
+                    binding.coupleResultText.text =
+                        presenter.resCal(result1.toInt(), requireContext())
+                    binding.pbCouple.currentProgress = result1.toInt() / 2
                     binding.pbCouple.visibility = View.VISIBLE
                 }
-                if (checkEmpty(binding.coupleEditHeight2.text.toString(), binding.coupleEditWeight2.text.toString(),)) {
-                    result2 = presenter.calculationBodyCmKg(cm2.toFloat(),kg2.toFloat())
-                    binding.coupleResultText2.text = presenter.resCal(result2.toInt(),requireContext())
-                    binding.pbCouple2.currentProgress = result2.toInt()/2
+                if (checkEmpty(
+                        binding.coupleEditHeight2.text.toString(),
+                        binding.coupleEditWeight2.text.toString(),
+                    )
+                ) {
+                    result2 = presenter.calculationBodyCmKg(cm2.toFloat(), kg2.toFloat())
+                    binding.coupleResultText2.text =
+                        presenter.resCal(result2.toInt(), requireContext())
+                    binding.pbCouple2.currentProgress = result2.toInt() / 2
                     binding.pbCouple2.visibility = View.VISIBLE
                 }
-            }else if(SettingsUtils.chosenSettings == false){
-                if (checkEmpty(binding.coupleEditHeight.text.toString(), binding.coupleEditWeight.text.toString())) {
-                    result1 = presenter.calculationBodyInchPound(cm.toFloat(),kg.toFloat())
-                    binding.coupleResultText.text= presenter.resCal(result1.toInt(),requireContext())
-                    binding.pbCouple.currentProgress = result1.toInt()/2
+            } else if (SettingsUtils.chosenSettings == false) {
+                if (checkEmpty(
+                        binding.coupleEditHeight.text.toString(),
+                        binding.coupleEditWeight.text.toString()
+                    )
+                ) {
+                    result1 = presenter.calculationBodyInchPound(cm.toFloat(), kg.toFloat())
+                    binding.coupleResultText.text =
+                        presenter.resCal(result1.toInt(), requireContext())
+                    binding.pbCouple.currentProgress = result1.toInt() / 2
                     binding.pbCouple.visibility = View.VISIBLE
                 }
-                if (checkEmpty(binding.coupleEditHeight2.text.toString(), binding.coupleEditWeight2.text.toString(),)) {
-                    result2 = presenter.calculationBodyInchPound(cm2.toFloat(),kg2.toFloat())
-                    binding.coupleResultText2.text = presenter.resCal(result2.toInt(),requireContext())
-                    binding.pbCouple2.currentProgress = result2.toInt()/2
+                if (checkEmpty(
+                        binding.coupleEditHeight2.text.toString(),
+                        binding.coupleEditWeight2.text.toString(),
+                    )
+                ) {
+                    result2 = presenter.calculationBodyInchPound(cm2.toFloat(), kg2.toFloat())
+                    binding.coupleResultText2.text =
+                        presenter.resCal(result2.toInt(), requireContext())
+                    binding.pbCouple2.currentProgress = result2.toInt() / 2
                     binding.pbCouple2.visibility = View.VISIBLE
                 }
             }
         }
     }
+
     private fun checkEmpty(lentghEt: String?, weightEt: String?): Boolean {
         if (TextUtils.isEmpty(lentghEt))
             return false
@@ -104,9 +125,10 @@ class CoupleFragment : Fragment(), CalculationResultView {
             return false
         return true
     }
+
     private fun setView() {
-        binding.coupleResultText.movementMethod= ScrollingMovementMethod()
-        binding.coupleResultText2.movementMethod= ScrollingMovementMethod()
+        binding.coupleResultText.movementMethod = ScrollingMovementMethod()
+        binding.coupleResultText2.movementMethod = ScrollingMovementMethod()
         genderList = resources.getStringArray(R.array.cinsiyet).toList()
 
         val genderAdapter =
@@ -155,12 +177,22 @@ class CoupleFragment : Fragment(), CalculationResultView {
             }
     }
 
-    override fun onCalculationSuccess(message: String) {
-        Toasty.success(requireContext(), message, Toast.LENGTH_SHORT).show()
+    private fun showToast(message: String) {
+        ToastUtil.showToast(requireContext(), message)
     }
 
-    override fun onCalculationError(message: String) {
-        Toasty.error(requireContext(), message, Toast.LENGTH_SHORT).show()
+    override fun onCalculationMessage(type: AppMessage) {
+        when (type) {
+            AppMessage.NO_ZERO -> {
+                showToast(getString(R.string.no_empty))
+            }
+            AppMessage.NO_EMPTY -> {
+                showToast(getString(R.string.no_empty))
+            }
+            AppMessage.SUCCESS_CALCULATION -> {
+                showToast(getString(R.string.no_empty))
+            }
+        }
     }
 
 

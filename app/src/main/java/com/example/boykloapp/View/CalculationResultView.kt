@@ -1,6 +1,7 @@
 package com.example.boykloapp.View
 
+import com.example.boykloapp.data.AppMessage
+
 interface CalculationResultView {
-    fun onCalculationSuccess(message : String)
-    fun onCalculationError(message : String)
+    fun onCalculationMessage(type: AppMessage)
 }
