@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
-                android:text="Age"
+                android:text="@string/age"
                 android:textColor="@color/white"
                 android:textSize="12dp" />
 
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp"
-                android:text="Weight"
+                android:text="@string/kilo"
                 android:textColor="@color/white"
                 android:textSize="12sp" />
 
@@ -85,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp"
-                android:text="Height"
+                android:text="@string/boy"
                 android:textColor="@color/white"
                 android:textSize="12sp" />
 
@@ -120,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp"
-                android:text="Gender"
+                android:text="@string/gender"
                 android:textColor="@color/white"
                 android:textSize="12sp" />
 
@@ -145,7 +145,7 @@
                 android:id="@+id/pb_couple"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="50dp"
                 android:background="@drawable/progressbar_color"
                 app:markerColor="@android:color/black"
                 app:markerWidth="3dp"
@@ -175,11 +175,10 @@
                 android:id="@+id/btn_couple_result"
                 android:layout_width="match_parent"
                 android:layout_height="77dp"
-                android:layout_marginTop="200dp"
+                android:layout_marginTop="50dp"
                 android:background="@drawable/single_custom_button_result"
                 android:gravity="center"
-                android:onClick="couple_btn_result"
-                android:text="RESULT"
+                android:text="@string/result"
                 android:textSize="15sp" />
 
 
@@ -198,7 +197,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="15dp"
-                android:text="Age"
+                android:text="@string/age"
                 android:textColor="@color/white"
                 android:textSize="12dp" />
 
@@ -217,7 +216,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
-                android:text="Weight"
+                android:text="@string/kilo"
                 android:textColor="@color/white"
                 android:textSize="12sp" />
 
@@ -251,7 +250,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
-                android:text="Height"
+                android:text="@string/boy"
                 android:textColor="@color/white"
                 android:textSize="12sp" />
 
@@ -285,7 +284,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
-                android:text="Gender"
+                android:text="@string/gender"
                 android:textColor="@color/white"
                 android:textSize="12sp" />
 
@@ -310,7 +309,7 @@
                 android:id="@+id/pb_couple2"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="50dp"
                 android:background="@drawable/progressbar_color"
                 app:markerColor="@android:color/black"
                 app:markerWidth="3dp"

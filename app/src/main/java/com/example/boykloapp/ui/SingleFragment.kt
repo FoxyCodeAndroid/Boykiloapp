@@ -14,6 +14,7 @@ import com.example.boykloapp.View.CalculationResultView
 import com.example.boykloapp.data.AppMessage
 import com.example.boykloapp.presenter.CalculationPresenter
 import com.example.boykloapp.utils.SettingsUtils
+import com.example.boykloapp.utils.ToastUtil
 import com.foxycode.bedenolcer.R
 import com.foxycode.bedenolcer.databinding.FragmentSingleBinding
 
@@ -106,10 +107,24 @@ class SingleFragment : Fragment(),CalculationResultView {
             return false
         return true
     }
-
-
+    private fun showToast(message: String) {
+        ToastUtil.showToast(requireContext(),message)
+    }
+    private fun showToastSuccess(message: String) {
+        ToastUtil.showToastSuccess(requireContext(), message)
+    }
     override fun onCalculationMessage(type: AppMessage) {
-            //Couple göre
+        when (type) {
+            AppMessage.NO_ZERO -> {
+                showToast(getString(R.string.no_0))
+            }
+            AppMessage.NO_EMPTY -> {
+                showToast(getString(R.string.no_empty))
+            }
+            AppMessage.SUCCESS_CALCULATION -> {
+                showToastSuccess(getString(R.string.success))
+            }
+        }
     }
 
 }

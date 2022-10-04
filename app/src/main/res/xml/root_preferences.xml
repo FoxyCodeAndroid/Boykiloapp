@@ -1,27 +1,23 @@
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
    >
-
     <PreferenceCategory
-
-        android:icon="@drawable/settings_24"
-        app:title="Settings">
-
+        android:icon="@drawable/settings_48"
+        app:title="@string/settings">
 
     </PreferenceCategory>
 
-    <PreferenceCategory app:title="Basics">
+    <PreferenceCategory app:title="@string/basics">
 
         <ListPreference
-            app:title="Mass Type"
+            app:title="@string/masstype"
             app:key="mass_type"
             app:useSimpleSummaryProvider="true"
             app:defaultValue="1"
             android:entries="@array/mass_type"
             android:entryValues="@array/mass_type_values"
             />
-
 
     </PreferenceCategory>
 

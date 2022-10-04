@@ -11,12 +11,12 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import com.example.boykloapp.Utils.ToastUtil
 import com.example.boykloapp.View.CalculationResultView
 import com.example.boykloapp.data.AppMessage
 import com.example.boykloapp.presenter.CalculationPresenter
 import com.example.boykloapp.presenter.CalculationViewState
 import com.example.boykloapp.utils.SettingsUtils
+import com.example.boykloapp.utils.ToastUtil
 import com.foxycode.bedenolcer.R
 import com.foxycode.bedenolcer.databinding.FragmentCoupleBinding
 import com.google.android.play.core.review.ReviewManager
@@ -180,17 +180,20 @@ class CoupleFragment : Fragment(), CalculationResultView {
     private fun showToast(message: String) {
         ToastUtil.showToast(requireContext(), message)
     }
+    private fun showToastSuccess(message: String) {
+        ToastUtil.showToastSuccess(requireContext(), message)
+    }
 
     override fun onCalculationMessage(type: AppMessage) {
         when (type) {
             AppMessage.NO_ZERO -> {
-                showToast(getString(R.string.no_empty))
+                showToast(getString(R.string.no_0))
             }
             AppMessage.NO_EMPTY -> {
                 showToast(getString(R.string.no_empty))
             }
             AppMessage.SUCCESS_CALCULATION -> {
-                showToast(getString(R.string.no_empty))
+                showToastSuccess(getString(R.string.success))
             }
         }
     }

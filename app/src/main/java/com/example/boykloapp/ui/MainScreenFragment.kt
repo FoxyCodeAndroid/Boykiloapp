@@ -22,11 +22,12 @@ class MainScreenFragment : Fragment() {
 
     private var _binding: FragmentMainScreenBinding? = null
     private val binding get() = _binding!!
-    var prefs : Boolean? = null
+    var prefs: Boolean? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,16 +35,20 @@ class MainScreenFragment : Fragment() {
         _binding = FragmentMainScreenBinding.inflate(inflater, container, false)
         return binding.root
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val sharedPreferences = this.activity?.getSharedPreferences("com.foxycode.bedenolcer",
-            MODE_PRIVATE)
-        prefs = sharedPreferences!!.getBoolean("pref",true)
+        val sharedPreferences = this.activity?.getSharedPreferences(
+            "com.foxycode.bedenolcer",
+            MODE_PRIVATE
+        )
+        prefs = sharedPreferences!!.getBoolean("pref", true)
         SettingsUtils.chosenSettings = prefs
 
         binding.btnSingle.setOnClickListener {

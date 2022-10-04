@@ -3,13 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/layout/activity_main_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/layout/activity_main_screen.xml" value="0.27918781725888325" />
         <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/layout/fragment_about_us.xml" value="0.18034447821681865" />
-        <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/layout/fragment_couple.xml" value="0.33" />
-        <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/layout/fragment_main_screen.xml" value="0.5" />
+        <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/layout/fragment_couple.xml" value="0.25" />
+        <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/layout/fragment_main_screen.xml" value="0.18" />
+        <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/layout/fragment_setting.xml" value="0.1" />
         <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/layout/fragment_single.xml" value="0.33" />
-        <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/layout/include_custom_toolbar.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/xml/root_preferences.xml" value="0.33" />
+        <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/layout/fragment_splash.xml" value="0.10277777777777777" />
+        <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/layout/include_custom_toolbar.xml" value="0.14" />
+        <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/layout/include_custom_toolbar_couple.xml" value="0.22" />
+        <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/layout/settings_background.xml" value="0.365625" />
+        <entry key="..\:/Users/ALP/Desktop/utku/1/Boykiloapp/app/src/main/res/xml/root_preferences.xml" value="0.30337078651685395" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable-v24/menuItem.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/btn_white_rectangle.xml" value="0.2085" />
