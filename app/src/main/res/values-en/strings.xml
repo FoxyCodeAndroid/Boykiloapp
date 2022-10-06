@@ -48,4 +48,12 @@
     <string name="result">result</string>
     <string name="person1">Person-1</string>
     <string name="person2">Person-2</string>
+    <string name="info_desc">
+        This is a open source project:
+    \n
+    \n
+    Foxycode
+        \n
+    utkuglsvn
+    </string>
 </resources>

@@ -48,7 +48,14 @@
     <string name="result">Sonuç</string>
     <string name="person1">Kişi-1</string>
     <string name="person2">Kişi-2</string>
+    <string name="info_desc">
+        Bu proje açık kaynaklı bir projedir.
+    \n
+    \n
+    Foxycode
+            \n
+    utkuglsvn
 
-
+    </string>
 
 </resources>
