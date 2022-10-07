@@ -132,29 +132,41 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp" />
 
-            <TextView
-                android:id="@+id/couple_result_text"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="50dp"
-                android:orientation="vertical" />
 
-            <params.com.stepprogressview.StepProgressView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="220dp"
+                android:orientation="vertical">
 
-                android:id="@+id/pb_couple"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/progressbar_color"
-                app:markerColor="@android:color/black"
-                app:markerWidth="3dp"
-                app:markers="8,13"
-                android:visibility="gone"
-                app:progressColor="#F19A19"
-                app:textMargin="1dp"
-                app:textSize="15sp"
-                app:totalProgress="40" />
+                <TextView
+                    android:id="@+id/couple_result_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center" />
+
+                <params.com.stepprogressview.StepProgressView
+
+                    android:id="@+id/pb_couple"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="8"
+                    android:background="@drawable/progressbar_color"
+                    android:visibility="gone"
+                    app:markerColor="@android:color/black"
+                    app:markerWidth="3dp"
+                    app:markers="8,13"
+                    app:progressColor="#F19A19"
+                    app:textMargin="1dp"
+                    app:textSize="15sp"
+                    app:totalProgress="40" />
+
+            </LinearLayout>
 
 
         </LinearLayout>
@@ -168,20 +180,21 @@
             <ImageView
                 android:id="@+id/rul"
                 android:layout_width="wrap_content"
-                android:layout_height="368dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 app:srcCompat="@drawable/ruler" />
-
             <TextView
                 android:id="@+id/btn_couple_result"
-                android:layout_width="match_parent"
-                android:layout_height="77dp"
-                android:layout_marginTop="50dp"
+                android:layout_width="60dp"
+                android:layout_height="65dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="140dp"
                 android:background="@drawable/single_custom_button_result"
                 android:gravity="center"
                 android:text="@string/result"
+                android:layout_gravity="center_horizontal"
                 android:textSize="15sp" />
-
-
         </LinearLayout>
 
         <LinearLayout
@@ -296,30 +309,39 @@
                 android:layout_marginTop="5dp"
                 android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/couple_result_text2"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="50dp"
-                android:orientation="vertical" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="220dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
 
-            <params.com.stepprogressview.StepProgressView
+                <TextView
+                    android:id="@+id/couple_result_text2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center" />
 
-                android:id="@+id/pb_couple2"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/progressbar_color"
-                app:markerColor="@android:color/black"
-                app:markerWidth="3dp"
-                android:visibility="gone"
-                app:markers="8,13"
-                app:progressColor="#F19A19"
-                app:textMargin="1dp"
-                app:textSize="15sp"
-                app:totalProgress="40" />
+                <params.com.stepprogressview.StepProgressView
+                    android:id="@+id/pb_couple2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/progressbar_color"
+                    app:markerColor="@android:color/black"
+                    app:markerWidth="3dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="8"
+                    android:visibility="gone"
+                    app:markers="8,13"
+                    app:progressColor="#F19A19"
+                    app:textMargin="1dp"
+                    app:textSize="15sp"
+                    app:totalProgress="40" />
 
+            </LinearLayout>
 
         </LinearLayout>
 
